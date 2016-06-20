@@ -8,8 +8,8 @@ namespace Test01.Interface
 {
     public interface IPart
     {
-        String Name { get; set; }
-        Boolean IsWorking { set; }
+         String Name { get; set; }
+        Boolean IsWorking { get;  set; }
         List<IPart> ConnectedParts { get; set; }
 
         /// <summary>
@@ -24,6 +24,6 @@ namespace Test01.Interface
         /// </summary>
         /// <param name="prefix"></param>
         /// <returns></returns>
-        String GetFaultyPart(string prefix);
+        void GetFaultyPart(string prefix);
     }
 }

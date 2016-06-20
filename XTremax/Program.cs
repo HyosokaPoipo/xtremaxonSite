@@ -31,9 +31,10 @@ namespace Test01
         static void Main(string[] args)
         {
             Interface.IPart bigMachine = _GenerateBigMachine();
-            Console.WriteLine(bigMachine.GetPartMap(string.Empty));
+            //Console.WriteLine(bigMachine.GetPartMap("M-01"));
             Console.WriteLine(string.Empty);
-            Console.WriteLine(bigMachine.GetFaultyPart(string.Empty));
+            //Console.WriteLine(bigMachine.GetFaultyPart("M-01"));
+            bigMachine.GetFaultyPart("M-01");
             Console.Read();
         }
 
