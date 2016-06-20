@@ -1,1 +1,6 @@
 E:\C Sharp\SourceCode\Console\XTremax\XTremax\bin\Debug\XTremax.exe.config
+E:\C Sharp\SourceCode\Console\XTremax\XTremax\bin\Debug\XTremax.exe
+E:\C Sharp\SourceCode\Console\XTremax\XTremax\bin\Debug\XTremax.pdb
+E:\C Sharp\SourceCode\Console\XTremax\XTremax\obj\Debug\XTremax.csprojResolveAssemblyReference.cache
+E:\C Sharp\SourceCode\Console\XTremax\XTremax\obj\Debug\XTremax.exe
+E:\C Sharp\SourceCode\Console\XTremax\XTremax\obj\Debug\XTremax.pdb
