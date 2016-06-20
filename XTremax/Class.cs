@@ -10,7 +10,9 @@ namespace Test01.Class
     {
         public Part(string name, bool isWorking, List<Interface.IPart> connectedParts)
         {
-
+            Name = name;
+            IsWorking = isWorking;
+            ConnectedParts = connectedParts;
         }
 
         public string Name
