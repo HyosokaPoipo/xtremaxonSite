@@ -26,10 +26,37 @@ namespace Test01.Class
 
         public string GetPartMap(string prefix)
         {
+            string temp;
             string result = "";
-
+            for (int i = 0; i < ConnectedParts.Count; i++)
+            {
+                Part test = (Part)ConnectedParts[i];
+                temp = partMap(test, Name);                
+            }
             return result;            
         }
+
+        private string partMap(Part temp, string result)
+        {
+            for (int i = 0; i < temp.ConnectedParts.Count; i++)
+            {
+                result = result + " => " + temp.Name;
+                partMap((Part)temp.ConnectedParts[i], result);
+            }
+
+            if (temp.ConnectedParts.Count == 0)
+            {
+                Console.WriteLine(result + " => " + temp.Name);
+                return "";
+            }
+            //else if (!temp.IsWorking && temp.ConnectedParts.Count == 0)
+            //{
+            //    return "";
+            //}
+
+            return "";
+        }
+
 
         public void GetFaultyPart(string prefix)
         {
@@ -50,8 +77,10 @@ namespace Test01.Class
             }
 
 
-            Console.WriteLine("end of line");
+            //Console.WriteLine("end of line");
         }
+
+        
 
 
         private string faulty3(Part temp, string result)
