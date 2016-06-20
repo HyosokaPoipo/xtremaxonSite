@@ -19,28 +19,28 @@ namespace Test01.Class
         {
             get
             {
-                throw new NotImplementedException();
+                return Name;
             }
             set
             {
-                throw new NotImplementedException();
+                Name = value;
             }
         }
 
         public bool IsWorking
         {
-            set { throw new NotImplementedException(); }
+            set { IsWorking = value; }
         }
 
         public List<Interface.IPart> ConnectedParts
         {
             get
             {
-                throw new NotImplementedException();
+                return ConnectedParts;
             }
             set
             {
-                throw new NotImplementedException();
+                ConnectedParts = value;
             }
         }
 
