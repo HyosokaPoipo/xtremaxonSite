@@ -1,0 +1,35 @@
+.KE5[!v}C)2M2J<x
+
+!Xtr3M4xYf1!
+
+Summary may only contains 150 character, so if the first paragraph contains more than 150 characters, you need to truncate the text.
+
+
+
+
+getFaultyPart. txt :
+M-01 =>  B-02 =>  S-01 =>  S-30 (faulty)
+M-01 =>  B-03 =>  S-02 (faulty)
+M-01 =>  B-05 =>  S-03 (faulty)
+
+
+
+getPartMap.txt :
+ M-01 =>  B-01 =>  B-01-A
+ M-01 =>  B-02 =>  S-01 =>  S-30
+ M-01 =>  B-02 =>  S-01 =>  S-31
+ M-01 =>  B-02 =>  S-02
+ M-01 =>  B-02 =>  S-03 =>  S-30
+ M-01 =>  B-02 =>  S-03 =>  S-31
+ M-01 =>  B-03 =>  S-01
+ M-01 =>  B-03 =>  S-02 =>  S-30
+ M-01 =>  B-03 =>  S-02 =>  S-31
+ M-01 =>  B-03 =>  S-03
+ M-01 =>  B-04 =>  S-01
+ M-01 =>  B-04 =>  S-02 =>  S-30
+ M-01 =>  B-04 =>  S-02 =>  S-31
+ M-01 =>  B-05 =>  S-01 =>  S-30
+ M-01 =>  B-05 =>  S-01 =>  S-31
+ M-01 =>  B-05 =>  S-02 =>  S-30
+ M-01 =>  B-05 =>  S-02 =>  S-31
+ M-01 =>  B-05 =>  S-03
