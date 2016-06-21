@@ -39,8 +39,33 @@ namespace FriendConsole
 
         public static int FindMinimumNumberOfHops(Person a, Person b)
         {
-            //Write your codes....
-            return 0;
+            int result = -1;
+            for (int i = 0; i < a.Friends.Count; i++)
+            {
+                if (a.Friends[i] == b) return result;
+                    
+                else 
+                {
+                    result += 1;
+                    return result + FindMinimumNumberOfHops((Person)a.Friends[i], b);}
+                //int temp = 1+FindMinimumNumberOfHops((Person)a.Friends[i], b);
+                //result = result < temp ? temp : result;
+            }
+           
+            return result;
+        }
+
+        private static int getMin(Person a, Person b, int sum, Person prev)
+        {
+            for (int i = 0; i < a.Friends.Count; i++)
+            {
+                if (a.Friends[i] == prev) continue;
+                else if (a.Friends[i] == b) return sum;
+                sum += 1;
+                getMin(a.Friends[i], b, sum, a);
+            }
+
+                return 0;
         }
 
 
