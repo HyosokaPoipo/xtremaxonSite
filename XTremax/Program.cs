@@ -22,7 +22,7 @@ namespace FriendConsole
 
 
             personList = new List<Person>();
-            int minimumNuberOfHops = FindMinimumNumberOfHops(personF, personD);
+            int minimumNuberOfHops = FindMinimumNumberOfHops1(personA, personC);
             Console.WriteLine("Minimum number of Hops:" + minimumNuberOfHops);
 
             personList = new List<Person>();
@@ -59,6 +59,39 @@ namespace FriendConsole
                 }
             }
             
+        }
+
+        public static int FindMinimumNumberOfHops1(Person a, Person b)
+        {
+            personHopsTable.Clear();
+            personHopsTable.Add(a);
+            int result = int.MaxValue;
+            for (int i = 0; i < a.Friends.Count; i++)
+            {
+                //if (b.ToString().Equals(a.Friends[i].ToString())) return 1;
+                int temp = getMin2(a.Friends[i], b, 1);
+                result = temp < result ? temp : result;
+            }
+            return result;
+        }
+
+        private static int getMin2(Person a, Person b, int sum)
+        {
+            
+            int result = int.MaxValue;
+            personHopsTable.Add(a);
+            for (int i = 0; i < a.Friends.Count; i++)
+            {
+                if (a.Friends[i].ToString().Equals(b.ToString())) return sum+1;
+                if (!personHopsTable.Contains(a.Friends[i]))
+                {
+                    personHopsTable.Add(a.Friends[i]);
+                    int temp = getMin2(a.Friends[i], b, sum + 1);
+                    result = temp < result ? temp : result;
+                }
+            }
+
+            return result;
         }
 
 
