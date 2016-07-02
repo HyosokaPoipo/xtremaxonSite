@@ -13,6 +13,7 @@ namespace Test01.Class
             Name = name;
             IsWorking = isWorking;
             ConnectedParts = connectedParts;
+            nameList = new List<string>();
         }
 
         public string Name
@@ -24,7 +25,76 @@ namespace Test01.Class
         public List<Interface.IPart> ConnectedParts
         { get; set; }
 
+        private List<String> nameList;
         public string GetPartMap(string prefix)
+        {
+            nameList.Clear();
+            //string temp = "";
+            string result = "";
+            for (int i = 0; i < ConnectedParts.Count; i++)
+            {
+                //temp = Name +" => " +ConnectedParts[i].Name + "\n";
+                addNametoList((Part)ConnectedParts[i], Name);
+                //result += temp; 
+            }
+
+            foreach (string a in nameList)
+            {
+                result += a + "\n";
+            }
+
+            return result;
+        }
+
+        private void addNametoList(Part mPart, string name)
+        {
+            String temp = name + " => " + mPart.Name;
+            if (mPart.ConnectedParts.Count == 0) nameList.Add(temp);
+
+            for (int i = 0; i < mPart.ConnectedParts.Count; i++)
+            {
+                addNametoList((Part)mPart.ConnectedParts[i],temp);
+            }
+        }
+
+
+        public string GetFaultyPart(string prefix)
+        {
+            string result = "";
+            nameList.Clear();
+
+            for (int i = 0; i < ConnectedParts.Count; i++)
+            {                
+                listFaultyPart((Part)ConnectedParts[i], Name);                
+            }
+
+            foreach (string a in nameList)
+            {
+                result += a + "\n";
+            }
+
+            return result;
+        }
+
+        private void listFaultyPart(Part mPart, string name)
+        {            
+            String temp = name + " => " + mPart.Name;
+            if (!mPart.IsWorking) nameList.Add(temp);
+            for (int i = 0; i < mPart.ConnectedParts.Count; i++)
+            {
+                listFaultyPart((Part)mPart.ConnectedParts[i], temp);
+            }
+        }
+
+
+
+
+
+
+
+
+
+        private string GetPartMap_old(string prefix)
         {
             string temp;
             string result = "";
@@ -58,7 +128,7 @@ namespace Test01.Class
         }
 
 
-        public string GetFaultyPart(string prefix)
+        public string GetFaultyPart_old(string prefix)
         {
             //string result = "";
             //List<Interface.IPart> allFault = ConnectedParts.Find(x=>x.Name == prefix);
