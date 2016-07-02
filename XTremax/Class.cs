@@ -58,7 +58,7 @@ namespace Test01.Class
         }
 
 
-        public void GetFaultyPart(string prefix)
+        public string GetFaultyPart(string prefix)
         {
             //string result = "";
             //List<Interface.IPart> allFault = ConnectedParts.Find(x=>x.Name == prefix);
@@ -78,6 +78,7 @@ namespace Test01.Class
 
 
             //Console.WriteLine("end of line");
+            return "";
         }
 
         

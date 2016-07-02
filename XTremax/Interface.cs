@@ -24,6 +24,6 @@ namespace Test01.Interface
         /// </summary>
         /// <param name="prefix"></param>
         /// <returns></returns>
-        void GetFaultyPart(string prefix);
+        string GetFaultyPart(string prefix);
     }
 }
